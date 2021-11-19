@@ -3,11 +3,12 @@
 <div>
 <h1><%= @list.name %></h1>
 <ul>
-  <% @bookmarks.each do |bk| %>
-    <%movie = Movie.find(bk.movie_id)%>
-    <li><%= bk.comment%> - <%= movie.title %></li>
+  <% @bookmarks.each do |bookmark| %>
+    <%movie = Movie.find(bookmark.movie_id)%>
+    <%= cl_image_tag bookmark.photo.key, height: 300, width: 400, crop: :fill %>
+    <li><%= bookmark.comment%> - <%= movie.title %></li>
     <%= link_to "🗑Remove",
-                    bookmark_path(bk),
+                    bookmark_path(bookmark),
                     method: :delete,
                     data: { confirm: "Are you sure?" } %>
   <% end %>

@@ -1,0 +1,11 @@
+<div class="container">
+<%= simple_form_for @movie do |f| %>
+  <%= f.input :title%>
+  <%= f.input :overview %>
+  <%= f.input :poster_url %>
+  <%= f.input :rating, as: :numeric %>
+  <%= f.submit "Create", class: "btn btn-primary" %>
+<% end %>
+
+  <%= link_to "🎬 Back to movies", movies_path, class:"btn btn-secondary py-2 px-5 my-3" %>
+</div>
