@@ -5,7 +5,12 @@
         <span class="badge badge-primary badge-pill">14</span>
         <%= list.name%>
         <%= link_to "See more", list_path(list), class:"btn btn-secondary"%>
+        <%= link_to "Remove",
+            list_path(list),
+            method: :delete,
+            data: { confirm: "Are you sure?" } %>
       </li>
+
     <% end %>
   </ul>
 

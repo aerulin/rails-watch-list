@@ -6,6 +6,7 @@
 <% @bookmarks.each do |bk| %>
 <%movie = Movie.find(bk.movie_id)%>
 <li><%= bk.comment%> - <%= movie.title %></li>
+
 <% end %>
 </ul>
 
